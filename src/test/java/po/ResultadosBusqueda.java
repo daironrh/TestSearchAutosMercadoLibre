@@ -14,13 +14,13 @@ import java.util.List;
 public class ResultadosBusqueda extends BasePageObject {
     protected WebDriverWait espera;
     protected By resultadoBusqueda = By.className("rowItem");
-    protected By Form = By.id("searchResults");
+    protected By form = By.id("searchResults");
     protected By textoAnuncio = By.className("main-title");
     protected By linkAnuncio = By.cssSelector("a.item-link");
 
 
     public ResultadosBusqueda(WebDriver driver) throws Exception {
-        this.driver = driver;
+        super(driver);
         espera = new WebDriverWait(driver,10);
         if (!driver.getTitle().equals("Autos y Camionetas en Mercado Libre Uruguay")){
             throw new Exception("No es la página Autos y Camionetas en Mercado Libre Uruguay.");
@@ -28,7 +28,7 @@ public class ResultadosBusqueda extends BasePageObject {
     }
 
     public boolean busquedaAutosPresente(){
-        List<WebElement> resultado = espera.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Form));
+        List<WebElement> resultado = espera.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(form));
         if (!resultado.isEmpty())
             return true;
         return false;
