@@ -1,10 +1,10 @@
 package po;
 
+import framework.BasePageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class PaginaInicioMercadoLibre {
-    protected WebDriver driver;
+public class PaginaInicioMercadoLibre extends BasePageObject {
 
     protected By inputTextBusqueda = By.name("as_word");
     protected By botonBusqueda = By.xpath("/html/body/header/div/form/button/div");

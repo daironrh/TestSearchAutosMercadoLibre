@@ -1,5 +1,6 @@
 package po;
 
+import framework.BasePageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,8 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class ResultadosBusqueda {
-    protected WebDriver driver;
+public class ResultadosBusqueda extends BasePageObject {
     protected WebDriverWait espera;
     protected By resultadoBusqueda = By.className("rowItem");
     protected By Form = By.id("searchResults");
